@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styleshw5.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/33011860eb.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 id="city">Kharkiv</h2>
+                <h1>
+                    <span id="temperature">19</span>
+                    <span class="degrees">
+                        <a href="#" id="celsius">°C</a>
+                        |
+                        <a href="#" id="fahrenheit">°F</a>
+                    </span>
+                    <br />
+                    <i class="fa-solid fa-sun"></i>
+                </h1>
+
+                <form id="city-search">
+                    <input type="text" class="form-control" id="search-text" placeholder="Search" />
+                    <button type="button" class="btn btn-primary" id="search-button">
+                        Search
+                    </button>
+                    <button type="button" class="btn btn-primary" id="current-button">Current</button>
+                </form>
+
+                <p>
+                    Date:
+                    <span id="today">Saturday</span>
+                </p>
+                <p id="description">Snowing</p>
+                <p>Humidity <span id="humidity">77</span>% </p>
+                <p>Wind <span id="wind">30</span>km/h </p>
+            </div>
+        </div>
+    </div>
+    <script src="jshw5.js"></script>
+</body>
+
+</html>
