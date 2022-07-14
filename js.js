@@ -18,22 +18,6 @@
 //   axios.get(url).then(show);
 // }
 
-// function changeTemp() {
-//   let ftemp = Math.round((temp * 9) / 5 + 32);
-//   let showTemp = document.querySelector("#temperature");
-//   showTemp.innerHTML = `${ftemp}`;
-// }
-// let temp = 19;
-// let fahrenTemp = document.querySelector("#fahrenheit");
-// fahrenTemp.addEventListener("click", changeTemp);
-
-// function changeTempBack() {
-//   let degr = document.querySelector("#temperature");
-//   degr.innerHTML = `${temp}`;
-// }
-// let celsiusTemp = document.querySelector("#celsius");
-// celsiusTemp.addEventListener("click", changeTempBack);
-
 // function showTemperature(response) {
 //   let temperature = Math.round(response.data.main.temp);
 //   let city2 = response.data.name;
@@ -105,6 +89,8 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -120,8 +106,29 @@ function showsearch(event) {
   search(cityInputElement.value);
 }
 
+function changeTemp(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+function changeTempBack(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let clickButton = document.querySelector("#search-button");
 clickButton.addEventListener("click", showsearch);
 
 let showCity = document.querySelector("#city-search");
 showCity.addEventListener("submit", showsearch);
+
+let fahrenTemp = document.querySelector("#fahrenheit");
+fahrenTemp.addEventListener("click", changeTemp);
+search("Texas");
+
+let celsTemp = document.querySelector("#celsius");
+celsTemp.addEventListener("click", changeTempBack);
