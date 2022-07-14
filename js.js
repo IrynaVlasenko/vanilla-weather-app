@@ -137,6 +137,11 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#today");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconeElement = document.querySelector("#icone");
+  iconeElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let apiKey = "fb4ad69a2bb4c6370849b9a18c3de8e4";

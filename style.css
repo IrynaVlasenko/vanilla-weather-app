@@ -43,8 +43,8 @@ a {
     text-decoration: none;
 }
 
-h1 .fa-solid {
-    color: yellow;
+img{
+    width: 100px;
 }
 
 .form-control {
