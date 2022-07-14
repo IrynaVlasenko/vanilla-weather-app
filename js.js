@@ -125,7 +125,6 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
@@ -141,6 +140,7 @@ function displayTemperature(response) {
 }
 
 let apiKey = "fb4ad69a2bb4c6370849b9a18c3de8e4";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Texas&appid=${apiKey}&units=metric`;
+let city = "Texas";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
