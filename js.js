@@ -1,29 +1,3 @@
-// let date = new Date();
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let day = days[date.getDay()];
-// let hours = date.getHours();
-// if (hours < 10) {
-//   hours = `0${hours}`;
-// }
-
-// let minutes = date.getMinutes();
-// if (minutes < 10) {
-//   minutes = `0${minutes}`;
-// }
-
-// let currentDate = `${day} ${hours}:${minutes}`;
-
-// let elementDate = document.querySelector("#today");
-// elementDate.innerHTML = currentDate;
-
 // function show(response) {
 //   document.querySelector("#city").innerHTML = response.data.name;
 //   document.querySelector("#temperature").innerHTML = Math.round(
@@ -43,17 +17,6 @@
 //   console.log(url);
 //   axios.get(url).then(show);
 // }
-
-// function showsearch(event) {
-//   event.preventDefault();
-
-//   let city = document.querySelector("#search-text").value;
-//   search(city);
-// }
-// let showCity = document.querySelector("#city-search");
-// showCity.addEventListener("submit", showsearch);
-// let clickButton = document.querySelector("#search-button");
-// clickButton.addEventListener("click", showsearch);
 
 // function changeTemp() {
 //   let ftemp = Math.round((temp * 9) / 5 + 32);
@@ -144,8 +107,21 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = "fb4ad69a2bb4c6370849b9a18c3de8e4";
-let city = "Texas";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "fb4ad69a2bb4c6370849b9a18c3de8e4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function showsearch(event) {
+  event.preventDefault();
+
+  let cityInputElement = document.querySelector("#search-text");
+  search(cityInputElement.value);
+}
+
+let clickButton = document.querySelector("#search-button");
+clickButton.addEventListener("click", showsearch);
+
+let showCity = document.querySelector("#city-search");
+showCity.addEventListener("submit", showsearch);
