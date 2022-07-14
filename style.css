@@ -79,3 +79,7 @@ h5 {
     text-align: center;
     background-image: url(img/dewang-gupta-ESEnXckWlLY-unsplash.jpg);
 }
+
+#description {
+    text-transform: capitalize;
+}
