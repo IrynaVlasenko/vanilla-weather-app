@@ -80,6 +80,6 @@ h5 {
     background-image: url(img/dewang-gupta-ESEnXckWlLY-unsplash.jpg);
 }
 
-#description {
+#description::first-letter {
     text-transform: capitalize;
 }
