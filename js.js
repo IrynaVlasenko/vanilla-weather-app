@@ -110,11 +110,15 @@ function changeTemp(event) {
   event.preventDefault();
 
   let temperatureElement = document.querySelector("#temperature");
+  celsTemp.classList.remove("active");
+  fahrenTemp.classList.add("active");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 function changeTempBack(event) {
   event.preventDefault();
+  celsTemp.classList.add("active");
+  fahrenTemp.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
