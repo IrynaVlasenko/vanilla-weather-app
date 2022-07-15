@@ -10,6 +10,7 @@ body {
     padding: 10px;
     border: 1px solid #a1beee;
     border-radius: 20px;
+    margin-bottom: 0;
 }
 
 .card {
@@ -88,4 +89,7 @@ h5 {
 
 #description::first-letter {
     text-transform: capitalize;
+}
+footer {
+text-align: center;
 }
